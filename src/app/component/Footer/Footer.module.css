@@ -1,0 +1,8 @@
+.footer {
+    padding: 8px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
