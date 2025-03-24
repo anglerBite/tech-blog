@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import styles from './Article.module.css';
 import { Clock, ChevronRight} from "lucide-react";
-import { featuredPosts } from "../../dummy";
+import fetchFunc from '../../api/client/fetchFunc';
+import { fetchFuncType } from '@/types/types';
 
-const Article = () => {
+const Article = async () => {
+
+    const response = await fetchFunc();
+
     return (
         <div className={styles.grid}>
-            {featuredPosts.map((post, index) => (
+            {response.map((post: fetchFuncType, index: number) => (
                 <article key={index} className={styles.article}>
-                    <Link href="#" className={styles.articleLink}>
+                    <Link href={`/content/${post.slug}`} className={styles.articleLink}>
                         <div className={styles.articleMeta}>
                             <span className={styles.category}>{post.category}</span>
                             <span className={styles.dot}>•</span>

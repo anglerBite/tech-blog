@@ -1,6 +1,7 @@
 import { Code2, Search, LogIn } from "lucide-react";
 import styles from "./Header.module.css";
 import DarkMode from "../DarkMode/DarkMode";
+import Link from "next/link";
 
 
 const Header = () => {
@@ -10,7 +11,9 @@ const Header = () => {
                 <div className={styles.headerInner}>
                     <div className={styles.logo}>
                         <Code2 className={styles.logoIcon} />
-                        <span className={styles.logoText}>Tech Blog</span>
+                        <Link href='/'>
+                            <span className={styles.logoText}>Tech Blog</span>
+                        </Link>
                     </div>
                     <div className={styles.headerActions}>
                         <div className={styles.searchContainer}>

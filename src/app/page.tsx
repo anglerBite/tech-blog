@@ -1,7 +1,7 @@
 import styles from './page.module.css';
-import Hero from "./component/Hero/Hero";
-import Article from './component/article/Article';
-import Categories from './component/Categories/Categories';
+import Hero from "./_component/Hero/Hero";
+import Article from './_component/Article/Article';
+import Categories from './_component/Categories/Categories';
 
 export default function Home() {
 
