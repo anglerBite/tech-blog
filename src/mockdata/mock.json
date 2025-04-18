@@ -1,0 +1,25 @@
+{
+    "mock": [
+        {
+            "id": 1,
+            "title": "mockA",
+            "date": "2024-01-01",
+            "category": "typescript",
+            "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        {
+            "id": 2,
+            "title": "nockB",
+            "date": "2024-01-02",
+            "category": "javascript",
+            "text": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        {
+            "id": 3,
+            "title": "bockC",
+            "date": "2024-01-03",
+            "category": "react",
+            "text": "ccccccccccccccccccccccccccccccccccccccccccccccc"
+        }
+    ]
+}

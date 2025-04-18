@@ -1,0 +1,55 @@
+.container {
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 4rem;
+    padding: 0 4rem;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: var(--primary);
+}
+
+.logoText {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.primaryButton {
+    composes: button;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.primaryButton:hover {
+    background-color: var(--primary-hover);
+}

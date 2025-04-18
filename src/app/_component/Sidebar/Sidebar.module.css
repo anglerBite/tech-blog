@@ -1,0 +1,56 @@
+.container {
+    flex: 0.2;
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* height: fit-content; */
+    height: 100vh;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section h3 {
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tagLink {
+    padding: 2px;
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    background-color: var(--background);
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.recentPostsList {
+    list-style: none;
+    padding: 0;
+}
+
+.recentPostsList li {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.recentPostsList li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
