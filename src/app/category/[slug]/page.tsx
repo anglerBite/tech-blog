@@ -4,8 +4,12 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import Hero from '@/app/_component/Header/_component/Hero/Hero';
 
-const Page = async ({ params }: {params: {slug: string}}) => {
-    const { slug } = params;
+type BlogProps = {
+    params: Promise<{ slug: string }>;
+};
+
+const Page = async ({ params }: BlogProps) => {
+    const { slug } = await params;
     const data: MockData[] = await getData();
 
     const category = data.filter(item => item.category[0].name === slug);
