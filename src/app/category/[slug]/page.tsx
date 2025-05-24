@@ -4,21 +4,22 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import Hero from '@/app/_component/Header/_component/Hero/Hero';
 
-const page = async ({ params }) => {
+const page = async ({ params }: {params: {slug: string}}) => {
     const { slug } = await params;
     const data = await getData();
 
-    const category = data.filter(item => item.category === slug);
+    const category = data.filter(item => item.category[0].name === slug);
+    // console.log(category);
 
     return (
         <div className={styles.container}>
             <Hero />
             <div className={styles.articleContainer}>
-                {category.map((item: MockData, i: number) => (
-                    <article key={i} className={styles.article}>
+                {category.map((item: MockData) => (
+                    <article key={item.id} className={styles.article}>
                         <Link href={`/text/${item.id}`} className={styles.articleLink}>
                             <div className={styles.articleMeta}>
-                                <span className={styles.category}>{item.category}</span>
+                                <span className={styles.category}>{item.category[0].name}</span>
                                 <span className={styles.dot}>.</span>
                                 <span className={styles.date}>{item.date}</span>
                             </div>

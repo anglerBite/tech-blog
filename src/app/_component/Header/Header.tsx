@@ -1,8 +1,7 @@
-import { Code, Code2, LogIn } from "lucide-react";
+import { Code, Code2 } from "lucide-react";
 import Link from 'next/link';
 import styles from './Header.module.css';
 import DarkMode from "./_component/DarkMode/DarkMode";
-import Menu from "./_component/Menu/Menu";
 import SearchInput from "./_component/SearchInput/SearchInput";
 
 const Header = () => {
@@ -18,11 +17,6 @@ const Header = () => {
             <div className="flex items-center gap-4">
                 <SearchInput />
                 <DarkMode />
-                <Link href="/login" className={styles.primaryButton}>
-                    <LogIn size={20} />
-                    <button>ログイン</button>
-                </Link>
-                <Menu />
             </div>
         </header>
     )

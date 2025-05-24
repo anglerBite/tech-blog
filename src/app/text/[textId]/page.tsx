@@ -1,10 +1,12 @@
 import styles from './page.module.css';
+import dayjs from 'dayjs';
 import { getData } from "@/app/lib/fetchGET";
 
-const TextPage = async ({ params }: { params: { textId: number } }) => {
-    const { textId } = params;
+const TextPage = async ({ params }: {params: {textId: string}}) => {
+    const { textId } = await params;
     const data = await getData();
     const content = data.find(item => item.id === textId);
+    const formattedDate = dayjs(content.date).format('YYYY.MM.DD');
 
     return (
         <div className={styles.container}>
@@ -12,12 +14,12 @@ const TextPage = async ({ params }: { params: { textId: number } }) => {
                 <header className={styles.header}>
                     <h1>{content.title}</h1>
                     <div className={styles.meta}>
-                        <span>投稿日：{content.date}</span>
+                        <span>投稿日：{formattedDate}</span>
                     </div>
                 </header>
                 <div className={styles.text}>
-                    <p>{content.text}</p>
-                </div>
+                    <div dangerouslySetInnerHTML={{ __html: content.text }} />
+                </div> 
             </div>
         </div>
     )

@@ -1,16 +1,31 @@
+import { client } from "./microcms"
+
+// export const getData = async () => {
+//     try {
+//         const res = await fetch('http://localhost:3002/mock', {
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         });
+
+//         if (!res.ok) {
+//             throw new Error('取得失敗');
+//         }
+
+//         return res.json();
+
+//     } catch {
+//         return console.log('取得失敗')
+//     }
+// }
+
 export const getData = async () => {
-    try {
-        const res = await fetch('http://localhost:3000/api');
-
-        if (!res.ok) {
-            throw new Error('取得失敗');
+    const data = await client.get({
+        endpoint: 'blog',
+        queries: {
+            fields: 'id,title,category,text,date',
         }
+    });
 
-        const data = await res.json();
-
-        return data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return { mock: [] };
-    }
+    return data.contents;
 }
