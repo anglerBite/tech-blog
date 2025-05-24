@@ -1,5 +1,5 @@
 export interface MockData {
-    id: number;
+    id: string;
     title: string;
     category: string;
     text: string
