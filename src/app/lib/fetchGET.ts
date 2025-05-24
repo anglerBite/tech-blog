@@ -24,6 +24,7 @@ import { client } from "./microcms"
 
 // src/app/lib/fetchGET.ts
 
+
 type RawItem = Omit<MockData, 'category'> & {
     category: string[];
 };
