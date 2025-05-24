@@ -22,17 +22,23 @@ import { client } from "./microcms"
 
 // src/app/lib/fetchGET.ts
 
+// src/app/lib/fetchGET.ts
+
+type RawItem = Omit<MockData, 'category'> & {
+    category: string[];
+};
+
 export const getData = async (): Promise<MockData[]> => {
-    const res = await client.get<{
-        contents: MockData[]
-    }>({
+    const res = await client.get<{ contents: RawItem[] }>({
         endpoint: 'blog',
         queries: {
             fields: 'id,title,category,text,date',
         },
     });
 
-    // もし API から返ってくる JSON が期待と異なる場合は
-    // ここでバリデーションも挟める（例: zod 等）
-    return res.contents;
+    // 文字列配列 → { name: string }[] へ変換
+    return res.contents.map(item => ({
+        ...item,
+        category: item.category.map(name => ({ name })),
+    }));
 };
