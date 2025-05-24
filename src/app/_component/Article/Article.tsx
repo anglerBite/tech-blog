@@ -15,7 +15,9 @@ const Article = async () => {
                     <Link href={`/text/${item.id}`} className={styles.articleLink}>
                         <div className={styles.articleMeta}>
                             <span className={styles.category}>
-                                {(item.category as { name: string }[])[0].name}
+                                {typeof item.category === 'string'
+                                    ? item.category
+                                    : item.category[0]?.name ?? 'Uncategorized'}
                             </span>
                             <span className={styles.dot}>.</span>
                             <span className={styles.date}>{dayjs(item.date).format('YYYY.MM.DD')}</span>
