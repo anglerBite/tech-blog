@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import Hero from '@/app/_component/Header/_component/Hero/Hero';
 
-const page = async ({ params }: {params: {slug: string}}) => {
+const Page = async ({ params }: {params: {slug: string}}) => {
     const { slug } = params;
     const data: MockData[] = await getData();
 
@@ -32,4 +32,4 @@ const page = async ({ params }: {params: {slug: string}}) => {
     )
 }
 
-export default page
+export default Page
