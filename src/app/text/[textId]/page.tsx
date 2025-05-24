@@ -3,7 +3,11 @@ import dayjs from 'dayjs';
 import { getData } from "@/app/lib/fetchGET";
 import { MockData } from '@/types/types';
 
-const TextPage = async ({ params }: {params: {textId: string}}) => {
+type BlogProps = {
+    params: Promise<{ textId: string }>;
+};
+
+const TextPage = async ({ params }: BlogProps) => {
     const { textId } = await params;
     const data: MockData[] = await getData();
     const content: MockData | undefined = data.find(item => item.id === textId)!;
