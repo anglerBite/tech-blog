@@ -5,8 +5,8 @@ import styles from './page.module.css';
 import Hero from '@/app/_component/Header/_component/Hero/Hero';
 
 const page = async ({ params }: {params: {slug: string}}) => {
-    const { slug } = await params;
-    const data = await getData();
+    const { slug } = params;
+    const data: MockData[] = await getData();
 
     const category = data.filter(item => item.category[0].name === slug);
     // console.log(category);
