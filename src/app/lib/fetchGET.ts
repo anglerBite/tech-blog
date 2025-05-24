@@ -20,14 +20,19 @@ import { client } from "./microcms"
 //     }
 // }
 
-export const getData = async () => {
-    const data = await client.get({
+// src/app/lib/fetchGET.ts
+
+export const getData = async (): Promise<MockData[]> => {
+    const res = await client.get<{
+        contents: MockData[]
+    }>({
         endpoint: 'blog',
         queries: {
             fields: 'id,title,category,text,date',
-        }
+        },
     });
 
-    const contents: MockData[] = data.contents;
-    return contents;
-}
+    // もし API から返ってくる JSON が期待と異なる場合は
+    // ここでバリデーションも挟める（例: zod 等）
+    return res.contents;
+};
