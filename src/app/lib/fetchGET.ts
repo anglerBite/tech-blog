@@ -1,3 +1,4 @@
+import { MockData } from "@/types/types";
 import { client } from "./microcms"
 
 // export const getData = async () => {
@@ -27,5 +28,6 @@ export const getData = async () => {
         }
     });
 
-    return data.contents;
+    const contents: MockData[] = data.contents;
+    return contents;
 }
