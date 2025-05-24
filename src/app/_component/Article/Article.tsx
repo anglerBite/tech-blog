@@ -5,7 +5,6 @@ import Link from 'next/link';
 import styles from './Article.module.css';
 
 const Article = async () => {
-
     const data = await getData();
 
     return (
@@ -14,7 +13,12 @@ const Article = async () => {
                 <article key={item.id} className={styles.article}>
                     <Link href={`/text/${item.id}`} className={styles.articleLink}>
                         <div className={styles.articleMeta}>
-                            <span className={styles.category}>{item.category[0].name}</span>
+                            <span className={styles.category}>
+                                {/* 型安全なアクセス */}
+                                {typeof item.category[0] === 'object' && item.category[0].name ? 
+                                    item.category[0].name : 
+                                    String(item.category[0])}
+                            </span>
                             <span className={styles.dot}>.</span>
                             <span className={styles.date}>{dayjs(item.date).format('YYYY.MM.DD')}</span>
                         </div>
@@ -23,7 +27,7 @@ const Article = async () => {
                 </article>
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default Article
+export default Article;
