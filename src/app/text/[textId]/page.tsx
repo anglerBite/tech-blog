@@ -1,11 +1,12 @@
 import styles from './page.module.css';
 import dayjs from 'dayjs';
 import { getData } from "@/app/lib/fetchGET";
+import { MockData } from '@/types/types';
 
 const TextPage = async ({ params }: {params: {textId: string}}) => {
     const { textId } = await params;
-    const data = await getData();
-    const content = data.find(item => item.id === textId);
+    const data: MockData[] = await getData();
+    const content: MockData | undefined = data.find(item => item.id === textId)!;
     const formattedDate = dayjs(content.date).format('YYYY.MM.DD');
 
     return (
