@@ -25,21 +25,14 @@ import { client } from "./microcms"
 // src/app/lib/fetchGET.ts
 
 
-type RawItem = Omit<MockData, 'category'> & {
-    category: string[];
-};
 
 export const getData = async (): Promise<MockData[]> => {
-    const res = await client.get<{ contents: RawItem[] }>({
+    const data = await client.get({
         endpoint: 'blog',
         queries: {
             fields: 'id,title,category,text,date',
         },
     });
 
-    // 文字列配列 → { name: string }[] へ変換
-    return res.contents.map(item => ({
-        ...item,
-        category: item.category.map(name => ({ name })),
-    }));
+    return data.contents;
 };
