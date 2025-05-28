@@ -2,7 +2,6 @@ import { Code, Code2 } from "lucide-react";
 import Link from 'next/link';
 import styles from './Header.module.css';
 import DarkMode from "./_component/DarkMode/DarkMode";
-import SearchInput from "./_component/SearchInput/SearchInput";
 
 const Header = () => {
     return (
@@ -15,7 +14,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className="flex items-center gap-4">
-                <SearchInput />
+                {/* <SearchInput /> */}
                 <DarkMode />
             </div>
         </header>

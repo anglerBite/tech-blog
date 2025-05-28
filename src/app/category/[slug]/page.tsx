@@ -12,8 +12,8 @@ const Page = async ({ params }: BlogProps) => {
     const { slug } = await params;
     const data: MockData[] = await getData();
 
-    const category = data.filter(item => item.category[0].name === slug);
-    // console.log(category);
+    const category = data.filter(item => item.category.name === slug);
+    console.log(category);
 
     return (
         <div className={styles.container}>
@@ -23,7 +23,7 @@ const Page = async ({ params }: BlogProps) => {
                     <article key={item.id} className={styles.article}>
                         <Link href={`/text/${item.id}`} className={styles.articleLink}>
                             <div className={styles.articleMeta}>
-                                <span className={styles.category}>{item.category[0].name}</span>
+                                <span className={styles.category}>{item.category.name}</span>
                                 <span className={styles.dot}>.</span>
                                 <span className={styles.date}>{item.date}</span>
                             </div>

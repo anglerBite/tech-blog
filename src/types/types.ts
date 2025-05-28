@@ -15,7 +15,7 @@ export type Category = {
 export type MockData = {
     id: string;
     title: string;
-    category: Category[];
+    category: Category;
     text: string;
     date: string;
 } & MicroCMSListContent;

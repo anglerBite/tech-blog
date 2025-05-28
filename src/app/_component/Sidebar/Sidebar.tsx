@@ -9,18 +9,18 @@ const Sidebar = async () => {
 
     return (
         <aside className={styles.container}>
-            <section className={styles.section}>
+            {/* <section className={styles.section}>
                 <div>
                     <h3>カテゴリー</h3>
                     <div className={styles.tagList}>
-                        {/* {data.map((item: MockData, i: number) => (
-                            <Link href={`/category/${item.category[0].name}`} className={styles.tagLink} key={i}>
-                                <span className={styles.tag}>{item.category[0].name}</span>
+                        {data.map((item: MockData, i: number) => (
+                            <Link href={`/category/${item.category.name}`} className={styles.tagLink} key={i}>
+                                <span className={styles.tag}>{item.category.name}</span>
                             </Link>
-                        ))} */}
+                        ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className={styles.section}>
                 <h3>最近の記事</h3>
                 <ul className={styles.recentPostsList}>
