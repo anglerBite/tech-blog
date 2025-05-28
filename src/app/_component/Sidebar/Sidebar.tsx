@@ -13,11 +13,11 @@ const Sidebar = async () => {
                 <div>
                     <h3>カテゴリー</h3>
                     <div className={styles.tagList}>
-                        {data.map((item: MockData, i: number) => (
+                        {/* {data.map((item: MockData, i: number) => (
                             <Link href={`/category/${item.category[0].name}`} className={styles.tagLink} key={i}>
                                 <span className={styles.tag}>{item.category[0].name}</span>
                             </Link>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </section>
