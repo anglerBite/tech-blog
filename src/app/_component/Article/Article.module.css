@@ -60,7 +60,13 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-        padding: 0 130px;
+        /* padding: 0 130px; */
+    }
+
+    .articleMeta {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
     }
 }
 
@@ -69,6 +75,6 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
-        padding: 0 150px;
+        /* padding: 0 150px; */
     }
 }

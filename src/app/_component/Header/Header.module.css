@@ -9,8 +9,8 @@
     z-index: 10;
     height: 4rem;
     padding: 0 4rem;
+    width: 100%;
 }
-
 
 .logo {
     display: flex;
@@ -52,6 +52,10 @@
 
 .primaryButton:hover {
     background-color: var(--primary-hover);
+}
+
+@media (max-width: 900px) {
+
 }
 
 @media (max-width: 600px) {
