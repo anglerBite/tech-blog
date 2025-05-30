@@ -54,3 +54,21 @@
     color: var(--foreground);
     margin-bottom: 0.75rem;
 }
+
+@media (max-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0 130px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        padding: 0 150px;
+    }
+}

@@ -53,3 +53,24 @@
 .primaryButton:hover {
     background-color: var(--primary-hover);
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0.2rem 1rem;
+    }
+    .logoText {
+        font-size: 1rem;
+    }
+    .button {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    .primaryButton {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    .logoIcon {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+}
